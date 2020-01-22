@@ -1,4 +1,3 @@
-
 let g;
 
 let rndBtn;
@@ -21,8 +20,8 @@ function setup() {
 
 	createCanvas(500, 500);
 
-	tree = new Spruce(width / 2 - 200/6, height, 200, 400, 5);
-	//tree = new Birch(width/2, height, 350);
+	//tree = new Spruce(width / 2 - 200/6, height, 200, 400, 5);
+	tree = new Spruce(width/2, height, random(270, 400));
 	g = createGraphics(width, height);
 }
 
@@ -35,10 +34,13 @@ function draw() {
 
 function randomize() {
 	let treeSelectValue = treeSelect.value();
-	if(treeSelectValue == 'spruce'){
-						 // Spruce(x, y, width, height, numberOfTriangles)
-		tree = new Spruce(width / 2 - 200/6, height, random(100, 300),
-		 random(100, 400), floor(random(3, 6)));
+	if(treeSelectValue == 'simple_spruce'){
+						 // SimpleSpruce(x, y, width, height, numberOfTriangles)
+		tree = new SimpleSpruce(width / 2 - 200/6, height, random(100, 300),
+		random(100, 400), floor(random(3, 6)));
+
+	}else if(treeSelectValue == 'spruce'){
+		tree = new Spruce(width/2, height, random(270, 400));
 	}else if(treeSelectValue == 'birch'){
 		tree = new Birch(width/2, height, random(270, 400));
 	}

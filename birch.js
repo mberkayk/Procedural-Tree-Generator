@@ -1,4 +1,4 @@
-class Branch {
+class BirchBranch {
 
 	constructor(start, angle, length, size, array) {
 		this.start = start;
@@ -21,7 +21,7 @@ class Branch {
 			let sizeDecrement = floor(random(2, 3) + i / 1.2);
 			let childSize = size - sizeDecrement;
 			if(childSize < 1 == false){
-				array.push(new Branch(childStartPoint, childAngle, childLength,
+				array.push(new BirchBranch(childStartPoint, childAngle, childLength,
 					max(size - sizeDecrement, 0), array));
 			}
 		}
@@ -47,10 +47,15 @@ class Birch {
 		this.height = h;
 
 		this.branches = [];
-		this.branches.push(new Branch(new Point(width / 2, height),
+		this.branches.push(new BirchBranch(new Point(width / 2, height),
 		 						90, h, 16, this.branches));
 
 		this.leaves = [];
+		this.generateLeaves();
+	}
+
+	generateLeaves(){
+
 	}
 
 	display(g) {
@@ -77,7 +82,7 @@ class Birch {
 				increment -= step;
 
 				if(b.size - j <= 2){
-					let numOfLeaves = 10;
+					let numOfLeaves = 7;
 					for(let k = 0; k < numOfLeaves; k++){
 						this.leaves.push(new Point(
 							lineStart.x + k * (lineEnd.x - lineStart.x)/numOfLeaves,
