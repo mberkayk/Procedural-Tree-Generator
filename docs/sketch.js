@@ -21,7 +21,7 @@ function setup() {
 	createCanvas(500, 500);
 
 	//tree = new Spruce(width / 2 - 200/6, height, 200, 400, 5);
-	tree = new Spruce(width/2, height, random(270, 400));
+	tree = new Birch(width/2, height, random(270, 400));
 	g = createGraphics(width, height);
 }
 
