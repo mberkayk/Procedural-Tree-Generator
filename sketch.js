@@ -33,16 +33,8 @@ function draw() {
 }
 
 function randomize() {
-	let treeSelectValue = treeSelect.value();
-	if(treeSelectValue == 'simple_spruce'){
-						 // SimpleSpruce(x, y, width, height, numberOfTriangles)
-		tree = new SimpleSpruce(width / 2 - 200/6, height, random(100, 300),
-		random(100, 400), floor(random(3, 6)));
+	
+	tree = new Birch(width/2, height, random(270, 400));
 
-	}else if(treeSelectValue == 'spruce'){
-		tree = new Spruce(width/2, height, random(270, 400));
-	}else if(treeSelectValue == 'birch'){
-		tree = new Birch(width/2, height, random(270, 400));
-	}
 	redraw();
 }
